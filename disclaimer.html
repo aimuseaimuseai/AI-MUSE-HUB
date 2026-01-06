@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות והצהרת נגישות - Ai Muse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        .construction-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white leading-relaxed">
+
+    <!-- Skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-orange-600 focus:text-white focus:p-4 focus:rounded-lg">
+        דלג לתוכן הראשי
+    </a>
+
+    <!-- Landmark: Banner -->
+    <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo section (LEFT side) -->
+        <div class="flex items-center gap-3">
+            <img src="logo.jpg" alt="Ai Muse Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-tight text-white leading-none">Ai Muse</span>
+                <span class="text-[0.65rem] text-orange-400 font-bold tracking-widest uppercase">PROTOCOL 2026 KERNEL</span>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation (RIGHT side) -->
+        <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="ניווט ראשי">
+            <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
+            <a href="why-ai-muse.html" class="text-gray-400 hover:text-white">למה Ai Muse</a>
+            <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
+            <a href="city.html" class="text-gray-400 hover:text-white">פלטפורמה עירונית</a>
+            <a href="checkin-sheriff.html" class="text-gray-400 hover:text-white"><span lang="en">Check-in Sheriff</span></a>
+            <a href="car-sheriff.html" class="text-gray-400 hover:text-white"><span lang="en">Car-Sheriff</span></a>
+            <a href="disclaimer.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">מדיניות פרטיות ונגישות</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <nav id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4" aria-label="ניווט לנייד">
+        <a href="index.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-home mr-3" aria-hidden="true"></i>דף הבית
+        </a>
+        <a href="why-ai-muse.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-star mr-3" aria-hidden="true"></i>למה Ai Muse
+        </a>
+        <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-cogs mr-3" aria-hidden="true"></i>איך זה עובד
+        </a>
+        <a href="city.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-city mr-3" aria-hidden="true"></i>פלטפורמה עירונית
+        </a>
+        <a href="checkin-sheriff.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-file-contract mr-3" aria-hidden="true"></i><span lang="en">Check-in Sheriff</span>
+        </a>
+        <a href="car-sheriff.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-car mr-3" aria-hidden="true"></i><span lang="en">Car-Sheriff</span>
+        </a>
+        <a href="disclaimer.html" class="block py-3 text-orange-400 border-b border-slate-800">
+            <i class="fas fa-shield-alt mr-3" aria-hidden="true"></i>מדיניות פרטיות ונגישות
+        </a>
+    </nav>
+</header>
+
+    <main id="main-content" class="max-w-4xl mx-auto px-6 py-16">
+        <header class="construction-bg py-20 mb-12 rounded-2xl">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black mb-6">מדיניות פרטיות והצהרת נגישות</h1>
+                <p class="text-xl text-gray-300">Ai Muse - הגנה על פרטיותך ונגישות לכולם</p>
+            </div>
+        </header>
+
+        <div class="space-y-12">
+            <!-- Hebrew Section -->
+            <section class="bg-slate-900/50 p-8 rounded-2xl border border-slate-700">
+                <h2 class="text-3xl font-bold text-orange-400 mb-8 text-center">מדיניות פרטיות והצהרת נגישות - Ai Muse</h2>
+                
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-white">מדיניות פרטיות</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            aimuseai.com
+                        </p>
+                        <ol class="list-decimal pr-8 space-y-6 text-gray-300 leading-relaxed">
+                            <li>
+                                <strong>מי אחראי על המידע?</strong><br>
+                                הנתונים באתר מנהלים ומופעלים על-ידי:<br>
+                                שם: יורם כהן<br>
+                                אחראי על פרטיות: יורם כהן<br>
+                                דואר אלקטרוני ליצירת קשר בנושא פרטיות: aimuseaimuseai@gmail.com<br>
+                                טלפון ליצירת קשר בנושא פרטיות: 050-3040523
+                            </li>
+                            <li>
+                                <strong>מה מידע אישי נאסף?</strong><br>
+                                כאשר משתמש לוחץ על כפתור וואטסאפ או מבצע שליחת אימייל מתוך האתר, הוא מוסר ביוזמתו מידע אישי כגון: מספר טלפון ו/או כתובת דואר אלקטרוני.<br>
+                                כמו כן האתר עשוי לאסוף מידע טכני כגון: כתובת IP, סוג דפדפן, סוג מערכת הפעלה ונתוני שימוש סטטיסטיים.
+                            </li>
+                            <li>
+                                <strong>לשם מה מידע זה משמש?</strong><br>
+              .המידע שנמסר משמש אך ורק לצורך מענה לפנייה שנוצרה על-ידי המשתמש, לתפעול תקין של האתר ולשיפור חוויית הגלישה. האתר אינו שומר את הפרטים, אינו משתמש בהם לשם דיוור ו/או מסירה לצד שלישי. 
+                            </li>
+                            <li>
+                                <strong>האם האתר משתמש בקבצי Cookies?</strong><br>
+                                האתר עשוי להשתמש בקבצי Cookies בסיסיים לצורך תפעול תקין של האתר, ניתוח נתוני שימוש סטטיסטיים ושיפור השירות. מידע זה הינו אנונימי ואינו מזהה אדם ספציפי.
+                            </li>
+                            <li>
+                                <strong>עם מי המידע משתף?</strong><br>
+                                המידע אינו נמכר, מושכר או נמסר למפרסם או לגורמים חיצוניים למטרות פרסומיות.<br>
+                                ייתכן שימוש בשירותי צד ג' לצורך תמיכה טכנית, אחסון נתונים או ניתוח סטטיסטיקות, בכפוף לתנאי השירות שלהם.
+                            </li>
+                            <li>
+                                <strong>זכויות המשתמשים לפי החוק להגנת הפרטיות</strong><br>
+                                לפי הוראות החוק, לכל משתמש עומדת הזכות:<br>
+                                א. לעיין במידע האישי שנמסר על-ידו.<br>
+                                ב. לתקן מידע שגוי.<br>
+                                ג. לבקש למחוק מידע, בכפוף לדין.
+                            </li>
+                            <li>
+                                <strong>תקופת שמירת נתונים</strong><br>
+                                המידע האישי שנמסר ישמר רק למשך הזמן ההכרחי לצורך מענה לפנייה ולמטרות החוקיות המפורטות לעיל.
+                            </li>
+                            <li>
+                                <strong>ביטחון המידע</strong><br>
+                                האתר נוקט באמצעים סבירים להגנה על מידע אישי שנמסר לאורך התהליך.
+                            </li>
+                            <li>
+                                <strong>עדכונים למדיניות הפרטיות</strong><br>
+                                מדיניות זו עשויה להתעדכן מעת לעת בהתאם לשינויים בחקיקה, התקנות או אופי השירותים. העדכונים יפורסמו באתר.
+                            </li>
+                            <li>
+                                <strong>הסכמה לתנאי מדיניות פרטיות זו</strong><br>
+                                המשך שימוש באתר או ביצוע פעולות באתר מהווה הסכמה לכל תנאי מדיניות פרטיות זו.
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="space-y-4">
+    <h3 class="text-2xl font-bold text-white">הצהרת נגישות</h3>
+    
+    <p class="text-gray-300 leading-relaxed">
+        <strong class="text-white">EyeSite Technologies</strong> רואה חשיבות עליונה בהנגשת האתר לכלל הציבור, מתוך מחויבות עמוקה לשוויון ולמתן שירות הוגן לכל אדם.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed">
+        אתר <strong>aimuseai.com</strong> הונגש ברמת נגישות מקסימלית של 100% על פי עקרונות הנגישות של תקן ישראלי ת"י 5568 ודרישות WCAG 2.1 הבינלאומיות ברמת AA. 
+        האתר עבר תהליך הנגשה לאורך כל שלבי הפיתוח.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed">
+        לצד מחויבותנו להנגשה מלאה, אנו פועלים תחת פטור סטטוטורי לעוסקים זעירים כהגדרתם בחוק, המבוסס על היקף הפעילות העסקית והתנועה באתר. 
+        למרות זאת, החלטנו לבצע התאמות נרחבות מרצון ולחתור לרמת נגישות מיטבית, מעבר לדרישות החוק.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed">
+        <strong>מנגנון פניות נגישות:</strong> אם נתקלתם בקושי בגישה לתוכן או לתפקוד כלשהו באתר, 
+        או אם יש לכם הצעות לשיפור הנגישות, נשמח לשמוע מכם. אנו מתחייבים לבחון כל פנייה 
+        ולפעול לתיקון הליקויים בהקדם האפשרי.
+    </p>
+    
+    <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700 mt-4">
+        <p class="text-gray-300">
+            <strong>רכז נגישות:</strong> יורם כהן<br>
+            <strong>טלפון:</strong> 050-3040523<br>
+            <strong>דוא"ל:</strong> aimuseaimuseai@gmail.com
+        </p>
+    </div>
+    
+    <p class="text-sm text-gray-400 mt-4">
+        הערה: הצהרה זו מתייחסת לנגישות אתר האינטרנט בלבד ואינה חלה על מוצרים או שירותים אחרים של החברה.
+    </p>
+</div>
+                </div>
+            </section>
+
+            <!-- English Section -->
+            <section class="bg-slate-900/50 p-8 rounded-2xl border border-slate-700">
+                <h2 class="text-3xl font-bold text-orange-400 mb-8 text-center">Privacy Policy and Accessibility Statement</h2>
+                
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-white">Privacy Policy</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            aimuseai.com
+                        </p>
+                        <ol class="list-decimal pr-8 space-y-6 text-gray-300 leading-relaxed">
+                            <li>
+                                <strong>Who is responsible for the information?</strong><br>
+                                The data on the site is managed and operated by:<br>
+                                Name: Yoram Cohen<br>
+                                Privacy Officer: Yoram Cohen<br>
+                                Email for privacy contact: aimuseaimuseai@gmail.com<br>
+                                Phone for privacy contact: 050-3040523
+                            </li>
+                            <li>
+                                <strong>What personal information is collected?</strong><br>
+                                When a user clicks on a WhatsApp button or sends an email from the site, they voluntarily provide personal information such as: phone number and/or email address.<br>
+                                The site may also collect technical information such as: IP address, browser type, operating system type and statistical usage data.
+                            </li>
+                            <li>
+    <strong>What is this information used for?</strong><br>
+    The information provided is used solely for responding to inquiries initiated by the user, for proper operation of the site, and for improving the browsing experience. The site does not store the details, does not use them for mailing and/or transfer to a third party.
+</li>
+                            <li>
+                                <strong>Does the site use Cookies?</strong><br>
+                                The site may use basic Cookies for proper operation of the site, analysis of statistical usage data and service improvement. This information is anonymous and does not identify a specific individual.
+                            </li>
+                            <li>
+                                <strong>With whom is the information shared?</strong><br>
+                                The information is not sold, rented or provided to advertisers or external parties for advertising purposes.<br>
+                                Third-party services may be used for technical support, data storage or statistical analysis, subject to their terms of service.
+                            </li>
+                            <li>
+                                <strong>User rights under the Privacy Protection Law</strong><br>
+                                According to the law, every user has the right:<br>
+                                a. To review the personal information provided by them.<br>
+                                b. To correct inaccurate information.<br>
+                                c. To request deletion of information, subject to legal requirements.
+                            </li>
+                            <li>
+                                <strong>Data retention period</strong><br>
+                                The personal information provided will be retained only for the necessary time to respond to the inquiry and for the legal purposes specified above.
+                            </li>
+                            <li>
+                                <strong>Information security</strong><br>
+                                The site takes reasonable measures to protect personal information provided throughout the process.
+                            </li>
+                            <li>
+                                <strong>Updates to the privacy policy</strong><br>
+                                This policy may be updated from time to time according to changes in legislation, regulations, or the nature of services. Updates will be published on the site.
+                            </li>
+                            <li>
+                                <strong>Consent to the terms of this privacy policy</strong><br>
+                                Continued use of the site or performing actions on the site constitutes consent to all terms of this privacy policy.
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="space-y-4">
+    <h3 class="text-2xl font-bold text-white">Accessibility Statement</h3>
+    
+    <p class="text-gray-300 leading-relaxed">
+        <strong>EyeSite Technologies</strong> is committed to making the aimuseai.com website accessible to all users. 
+        The site has been made accessible to the highest standard of 100% in accordance with Israeli Standard SI 5568 and WCAG 2.1 Level AA.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed">
+        We operate under an exemption for micro-enterprises under the Equal Rights for Persons with Disabilities Law, 
+        but have chosen to implement extensive accessibility adjustments voluntarily beyond legal requirements.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed">
+        If you encounter any accessibility difficulties, we welcome your feedback and assistance requests.<br>
+        <strong>Accessibility Coordinator:</strong> Yoram Cohen<br>
+        <strong>Phone:</strong> 050-3040523<br>
+        <strong>Email:</strong> aimuseaimuseai@gmail.com
+    </p>
+</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="index.html" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition">
+                <i class="fas fa-arrow-right ml-3" aria-hidden="true"></i>
+                חזרה לדף הבית
+            </a>
+        </div>
+    </main>
+
+    <!-- Landmark: Contentinfo -->
+    <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+        <p class="mb-2"><span lang="en">EyeSite Technologies</span> © 2025.</p>
+        <p>Developed by AI Muse Urban Data Labs.</p>
+        <div class="mt-6 flex flex-col gap-3">
+            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2" aria-hidden="true"></i><span lang="en">WhatsApp</span>: 050-3040523</a>
+            <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
+        </div>
+        <div class="mt-6">
+            <a href="disclaimer.html" class="text-orange-400 hover:text-orange-300 transition font-medium">
+                מדיניות פרטיות והצהרת נגישות
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
