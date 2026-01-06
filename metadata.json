@@ -1,0 +1,8 @@
+{
+  "name": "AI Muse Hub",
+  "description": "A Hebrew-language business hub for AI solutions, featuring products like EyeSite and the Sheriff series.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
