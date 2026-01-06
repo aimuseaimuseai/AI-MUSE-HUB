@@ -1,37 +1,330 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Muse - Hebrew AI Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Assistant', 'Heebo', sans-serif;
-    }
-    .hero-gradient {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/1920/1080?grayscale');
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
-  }
-}
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Muse - Hub for Intelligent Compliance Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        .hub-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <div id="root"></div>
+<body class="bg-slate-950 text-white leading-relaxed">
+
+    <!-- Skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-orange-600 focus:text-white focus:p-4 focus:rounded-lg">
+        דלג לתוכן הראשי
+    </a>
+
+    <!-- Landmark: Banner -->
+    <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo section (LEFT side) -->
+        <div class="flex items-center gap-3">
+            <!-- FIXED PATH: Uses the logo from your public folder -->
+            <img src="/aimuse-logo.png" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-tight text-white leading-none">AI Muse</span>
+                <span class="text-[0.65rem] text-orange-400 font-bold tracking-widest uppercase">INTELLIGENT COMPLIANCE TOOLS</span>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation (RIGHT side) -->
+        <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="ניווט ראשי">
+            <!-- FIXED LINKS: All pages are in the root (no 'pages/' folder) -->
+            <a href="index.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">דף הבית</a>
+            <a href="eyesite.html" class="text-gray-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
+            <a href="city.html" class="text-blue-400 hover:text-blue-300 hover:border-b-2 hover:border-blue-300 hover:pb-1">פלטפורמה עירונית</a>
+            <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
+            <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1"><span lang="en">Car-Sheriff</span></a>
+            <a href="accessibility-sheriff.html" class="text-red-400 hover:text-red-300 hover:border-b-2 hover:border-red-300 hover:pb-1">שריף נגישות</a>
+            <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white" aria-label="תפריט ניווט" aria-expanded="false">
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4" role="navigation" aria-label="ניווט לנייד">
+        <!-- FIXED LINKS: Same as above for mobile -->
+        <a href="index.html" class="block py-3 text-orange-400 border-b border-slate-800">
+            <i class="fas fa-home text-orange-400 mr-3" aria-hidden="true"></i>דף הבית
+        </a>
+        <a href="eyesite.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-hard-hat text-orange-400 mr-3" aria-hidden="true"></i>EyeSite
+        </a>
+        <a href="city.html" class="block py-3 text-blue-400 hover:text-blue-300 border-b border-slate-800">
+            <i class="fas fa-city text-blue-400 mr-3" aria-hidden="true"></i>פלטפורמה עירונית
+        </a>
+        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
+            <i class="fas fa-file-contract text-purple-400 mr-3" aria-hidden="true"></i>Check-in Sheriff
+        </a>
+        <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
+            <i class="fas fa-car text-green-400 mr-3" aria-hidden="true"></i><span lang="en">Car-Sheriff</span>
+        </a>
+        <a href="accessibility-sheriff.html" class="block py-3 text-red-400 hover:text-red-300 border-b border-slate-800">
+            <i class="fas fa-universal-access text-red-400 mr-3" aria-hidden="true"></i>שריף נגישות
+        </a>
+        <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-shield-alt mr-3" aria-hidden="true"></i>מדיניות פרטיות ונגישות
+        </a>
+    </div>
+</header>
+
+    <!-- Landmark: Main Content -->
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hub-bg min-h-[60vh] flex items-center justify-center text-center relative px-4" aria-label="כותרת ראשית">
+        <div class="max-w-5xl mx-auto pt-16">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-orange-400 to-yellow-200">AI Muse</span><br>
+                פלטפורמת הכלים החכמים לציות ובקרה
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                סוויטת כלי AI מתקדמים לבטיחות, נגישות, ניהול עירוני ובדיקת רכב. כלים חינמיים לשימוש ופתרונות עסקיים מתקדמים.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured App: EyeSite -->
+    <section class="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="inline-block border border-orange-500/30 bg-orange-900/30 text-orange-400 font-bold text-sm px-4 py-2 rounded-full mb-4">המוצר המוביל שלנו</span>
+                <h2 class="text-3xl font-black text-white">EyeSite - בקרת סיכונים לבנייה</h2>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-900/20 to-orange-900/10 border border-orange-500/30 rounded-3xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-2/5">
+                        <!-- FIXED: Uses the specific EyeSite logo from your public folder -->
+                        <div class="bg-gradient-to-br from-orange-600/20 to-yellow-400/20 border border-orange-500/30 rounded-2xl p-8 aspect-square flex items-center justify-center">
+                            <img src="/eyesite-logo.png" alt="EyeSite Logo" class="max-w-full h-auto">
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 text-right">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">הפיכת וידאו שטח לדוח ניהולי מגן</h3>
+                        <p class="text-gray-300 text-lg leading-8 mb-6">
+                            מערכת ניתוח חזותי לאתרי בנייה, המותאמת לרגולציית אוקטובר 2026. מספקת הגנה ניהולית ותיעודית למנהלים ויזמים.
+                        </p>
+                        <ul class="text-gray-300 space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-green-500" aria-hidden="true"></i>
+                                <span>ניתוח סרטון וואטסאפ יומי מאתר הבנייה</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-green-500" aria-hidden="true"></i>
+                                <span>דוח PDF עם ליקויים והמלצות תוך שעות בודדות</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check text-green-500" aria-hidden="true"></i>
+                                <span>הוכחת 'זהירות סבירה' מול רגולטורים וביטוח</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="eyesite.html" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg">
+                                <i class="fas fa-info-circle ml-2" aria-hidden="true"></i>
+                                כל הפרטים על EyeSite
+                            </a>
+                            <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center border border-green-600 text-green-400 hover:bg-green-600/10 font-bold py-3 px-8 rounded-full transition">
+                                <i class="fab fa-whatsapp ml-2" aria-hidden="true"></i>
+                                קבלת הצעת מחיר
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Apps Grid -->
+    <section class="py-24 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">סוויטת הכלים שלנו</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">כלים חינמיים לשימוש מיידי ופתרונות מתקדמים. כל אחד מהם פותר בעיה ספציפית עם טכנולוגיית AI.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- City Platform -->
+                <a href="city.html" class="group bg-slate-900/50 border border-slate-800 hover:border-blue-500/50 p-8 rounded-3xl transition duration-300 block">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-city text-5xl text-blue-400 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 text-center group-hover:text-blue-300">פלטפורמה עירונית</h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        ניתוח נתונים עירוניים, זיהוי מגמות ותמיכה בקבלת החלטות עבור רשויות מקומיות.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-blue-400 text-sm font-bold">גש לכלי <i class="fas fa-arrow-left mr-2" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <!-- Check-in Sheriff -->
+                <a href="checkin-sheriff.html" class="group bg-slate-900/50 border border-slate-800 hover:border-purple-500/50 p-8 rounded-3xl transition duration-300 block">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-file-contract text-5xl text-purple-400 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 text-center group-hover:text-purple-300">Check-in Sheriff</h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        ניהול ואימות כניסת אורחים, עובדים וספקים עם דיווח אוטומטי ותיעוד.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-purple-400 text-sm font-bold">גש לכלי <i class="fas fa-arrow-left mr-2" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <!-- Car-Sheriff -->
+                <a href="car-sheriff.html" class="group bg-slate-900/50 border border-slate-800 hover:border-green-500/50 p-8 rounded-3xl transition duration-300 block">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-car text-5xl text-green-400 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 text-center group-hover:text-green-300"><span lang="en">Car-Sheriff</span></h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        אבחון רכב חכם באמצעות AI. העלאת תמונה, סרטון או תיאור בעיה לקבלת אבחנה ראשונית.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-green-400 text-sm font-bold">גש לכלי <i class="fas fa-arrow-left mr-2" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <!-- Accessibility Sheriff -->
+                <a href="accessibility-sheriff.html" class="group bg-slate-900/50 border border-slate-800 hover:border-red-500/50 p-8 rounded-3xl transition duration-300 block">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-universal-access text-5xl text-red-400 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 text-center group-hover:text-red-300">שריף נגישות</h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        סריקה ובדיקת ציות לתקני נגישות ישראליים ובינלאומיים עבור אתרים ומרחבים פיזיים.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-red-400 text-sm font-bold">גש לכלי <i class="fas fa-arrow-left mr-2" aria-hidden="true"></i></span>
+                    </div>
+                </a>
+
+                <!-- Coming Soon Placeholder 1 -->
+                <div class="group bg-slate-900/30 border border-dashed border-slate-700 p-8 rounded-3xl transition duration-300">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-chart-pie text-5xl text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-500 mb-3 text-center">כלי חדש בדרך</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        אנו מפתחים כלים נוספים בתחומי הלוגיסטיקה, התחזוקה והתעשייה.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-gray-500 text-sm font-bold">בקרוב...</span>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Placeholder 2 -->
+                <div class="group bg-slate-900/30 border border-dashed border-slate-700 p-8 rounded-3xl transition duration-300">
+                    <div class="h-16 mb-6 flex items-center justify-center">
+                        <i class="fas fa-robot text-5xl text-gray-500" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-500 mb-3 text-center">כלי חדש בדרך</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        רעיון לפתרון AI? <a href="mailto:aimuseaimuseai@gmail.com" class="text-orange-400 underline hover:no-underline">צור קשר</a> כדי לשתף.
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="text-gray-500 text-sm font-bold">בקרוב...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Technology Section -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-950/50 p-8 md:p-12 rounded-3xl border border-slate-800">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">הטכנולוגיה שעומדת מאחורי הכלים</h3>
+                <div class="space-y-6 text-gray-300 leading-8 font-light">
+                    <p>
+                        כלי ה-AI של <span class="text-orange-400 font-bold">AI Muse</span> פועלים על בסיס מנועי ראייה ממוחשבת (Computer Vision) ומודלי שפה גדולים (LLMs) מתקדמים, המותאמים ספציפית לתחומי הציות, הבטיחות והבקרה.
+                    </p>
+                    <p>
+                        אנו מתמחים ב"הקמת התודעה" של ה-AI – הגדרת התפקיד (Persona), הטון, מקורות המידע הסמכותיים והלוגיקה הנדרשת עבור כל כלי בנפרד, כדי להבטיח דיוק מקסימלי ותוצאות פרקטיות.
+                    </p>
+                    <p class="border-r-4 border-orange-500 pr-4 bg-orange-900/10 py-2 rounded-r-sm">
+                        <span class="text-white font-medium">המערכות שלנו אינן מחליפות מומחים אנושיים</span>, אלא מהוות שכבה טכנולוגית תומכת החלטה המחזקת את עבודתם ומספקת תיעוד רציף וברור.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+             <h2 class="text-3xl font-bold text-white mb-6">מוכנים לשדרג את תהליכי הבקרה והציות?</h2>
+             <p class="text-gray-400 leading-relaxed text-lg mb-10">
+                 בין אם אתם זקוקים לפתרון עסקי כמו EyeSite או רוצים לבדוק אחד מהכלים החינמיים – אנחנו כאן.
+             </p>
+             <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+                 <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50" aria-label="שלח הודעה בוואטסאפ (יפתח בחלון חדש)">
+                    <i class="fab fa-whatsapp text-2xl ml-3" aria-hidden="true"></i>
+                    דבר איתנו בוואטסאפ
+                </a>
+                 <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50" aria-label="התקשר אלינו">
+                    <i class="fas fa-phone text-xl ml-3" aria-hidden="true"></i>
+                    050-3040523
+                </a>
+             </div>
+        </div>
+    </section>
+</main>
+
+    <!-- Landmark: Contentinfo -->
+    <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+        <p class="mb-2"><span lang="en">AI Muse Urban Data Labs</span> © 2025.</p>
+        <p>Building intelligent tools for real-world compliance and safety challenges.</p>
+        <div class="mt-6 flex flex-col gap-3">
+            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2" aria-hidden="true"></i><span lang="en">WhatsApp</span>: 050-3040523</a>
+            <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
+        </div>
+        <div class="mt-6">
+            <a href="disclaimer.html" class="text-orange-400 hover:text-orange-300 transition font-medium">
+                מדיניות פרטיות והצהרת נגישות
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Fixed mobile menu toggle script
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>
