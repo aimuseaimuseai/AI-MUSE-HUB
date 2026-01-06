@@ -11,7 +11,8 @@
     <style>
         body { font-family: 'Heebo', sans-serif; }
         .construction-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('hero.jpg');
+            /* FIXED: Points to your uploaded hero image */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -41,7 +42,8 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo section (LEFT side) -->
         <div class="flex items-center gap-3">
-            <img src="logo.jpg" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
+            <!-- FIXED: Uses the main AI Muse logo -->
+            <img src="/aimuse-logo.png" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
             <div class="flex flex-col">
                 <span class="text-xl font-black tracking-tight text-white leading-none">AI Muse / EyeSite</span>
                 <span class="text-[0.65rem] text-orange-400 font-bold tracking-widest uppercase">PROTOCOL 2026 KERNEL</span>
@@ -50,6 +52,7 @@
         
         <!-- Desktop Navigation (RIGHT side) -->
         <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="ניווט ראשי">
+            <!-- FIXED: Links point correctly to root-level HTML files -->
             <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
             <a href="eyesite.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">EyeSite</a>
             <a href="city.html" class="text-blue-400 hover:text-blue-300 hover:border-b-2 hover:border-blue-300 hover:pb-1">פלטפורמה עירונית</a>
@@ -67,6 +70,7 @@
     
     <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4" role="navigation" aria-label="ניווט לנייד">
+        <!-- FIXED: Links consistent with desktop nav -->
         <a href="index.html" class="block py-3 text-orange-400 border-b border-slate-800">
             <i class="fas fa-home text-orange-400 mr-3" aria-hidden="true"></i>דף הבית
         </a>
@@ -383,16 +387,15 @@
                     </div>
                 </div>
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-900/20 border border-slate-700">
-                    <!-- Replace with your actual demo video -->
+                    <!-- FIXED: Video placeholder linking to your uploaded demo video -->
                     <div class="aspect-video bg-slate-800 flex items-center justify-center">
-                        <div class="text-center">
-                            <i class="fas fa-play-circle text-6xl text-orange-500 mb-4" aria-hidden="true"></i>
-                            <p class="text-gray-400">[הדגמת מערכת EyeSite]</p>
-                            <p class="text-sm text-gray-500 mt-2">סרטון הדגמה קצר של התהליך</p>
-                        </div>
+                        <video controls class="w-full h-full">
+                            <source src="/demo-video.mp4" type="video/mp4">
+                            הדפדפן שלך אינו תומך בנגן וידאו.
+                        </video>
                     </div>
                     <p class="text-center text-sm text-gray-400 py-3 bg-slate-800/50">
-                        ניתן <a href="eyesite_demo.mp4" class="text-orange-400 hover:text-orange-300 underline hover:no-underline">להוריד את הסרטון כאן</a> אם אינכם מצליחים לצפות בו.
+                        ניתן <a href="/demo-video.mp4" class="text-orange-400 hover:text-orange-300 underline hover:no-underline">להוריד את הסרטון כאן</a> אם אינכם מצליחים לצפות בו.
                     </p>
                 </div>
             </div>
@@ -426,8 +429,9 @@
 
     <!-- Landmark: Contentinfo -->
     <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
-        <p class="mb-2"><span lang="en">EyeSite Technologies</span> © 2025.</p>
-        <p>Developed by AI Muse Urban Data Labs.</p>
+        <!-- FIXED: Consistent footer branding with main site -->
+        <p class="mb-2"><span lang="en">AI Muse Urban Data Labs</span> © 2025.</p>
+        <p>Building intelligent tools for real-world compliance and safety challenges.</p>
         <div class="mt-6 flex flex-col gap-3">
             <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2" aria-hidden="true"></i><span lang="en">WhatsApp</span>: 050-3040523</a>
             <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
@@ -440,16 +444,19 @@
     </footer>
 
     <script>
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', function() {
-                const expanded = this.getAttribute('aria-expanded') === 'true';
-                this.setAttribute('aria-expanded', !expanded);
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        // FIXED: Mobile menu JavaScript wrapped in DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
     </script>
 
 </body>
